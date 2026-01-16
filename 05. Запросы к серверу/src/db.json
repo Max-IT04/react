@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "title": "ЧТЕНИЕ",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "Тренировка",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "title": "Учёба",
+      "completed": false,
+      "id": 3
+    }
+  ]
+}
