@@ -1,0 +1,14 @@
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  margin: 20px 0;
+  border: 1px solid black;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 50px;
+  border: 1px solid black;
+}
