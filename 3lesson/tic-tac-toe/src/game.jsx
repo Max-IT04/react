@@ -1,4 +1,4 @@
-import { useDispatch } from './redux-manager';
+import { useDispatch } from 'react-redux';
 import { GameLayout } from './game-layout';
 import { RESTART_GAME } from './actions';
 

@@ -1,14 +1,13 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux';
 import { Game } from './game'
-import { ReduxRenderer } from './redux-manager';
 import { store } from './store';
 import './index.css'
 
 
 
 createRoot(document.getElementById('root')).render(
-  <ReduxRenderer store={store}>
+  <Provider store={store}>
     <Game />
-  </ReduxRenderer>,
+  </Provider>,
 );
