@@ -1,13 +1,13 @@
-import { useRef } from 'react';
+// import { useRef } from 'react';
 import { useStateManager } from '../../../../state-manager';
-import { debounce } from '../../../../utils/debounce';
+// import { debounce } from '../../../../utils/debounce';
 import { Button } from '../../../button/button';
 import styles from './search.module.css';
 
 export const Search = () => {
   const {
     state: {
-      options: { searchInput, isAlphabetSorting },
+      options: { searchInput },
     }, updateState,
   } = useStateManager();
 
@@ -21,7 +21,7 @@ export const Search = () => {
     });
   };
 
-  const debouncedRunSearch = useRef(debounce(runSearch, 1500)).current;
+  // const debouncedRunSearch = useRef(debounce(runSearch, 1500)).current;
 
   const onChange = ({ target }) => {
     updateState({
@@ -29,7 +29,7 @@ export const Search = () => {
         searchInput: target.value,
       },
     });
-    debouncedRunSearch(target.value, isAlphabetSorting);
+    // debouncedRunSearch(target.value, isAlphabetSorting);
   };
 
   const onSubmit = (event) => {

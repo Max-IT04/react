@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'
-import { App, initialState } from './App'
+import { App, initialState } from './app'
 import { StateManager } from './state-manager.jsx';
 import './index.css'
 
