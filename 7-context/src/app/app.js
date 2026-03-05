@@ -1,27 +1,19 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { ControlPanel, Todo } from '../components';
-import { readTodos } from '../api';
-import { useStateManager } from '../state-manager';
+import { selectTodos, selectSearchPhrase, selectIsAlphabetSorting } from '../selectors';
+import { readTodosAsync } from '../actions'
 import styles from './app.module.css';
 
 export const App = () => {
-	const { state, setState } = useStateManager();
-	const {
-		todos,
-		options: { searchPhrase, isAlphabetSorting },
-	} = state;
+	const todos = useSelector(selectTodos);
+	const searchPhrase = useSelector(selectSearchPhrase);
+	const isAlphabetSorting = useSelector(selectIsAlphabetSorting);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
-		readTodos(searchPhrase, isAlphabetSorting).then((loadedTodos) => {
-			setState({
-				...state,
-				todos: loadedTodos,
-				options: {
-					...state.options,
-					isLoading: false,
-				},
-			});
-		});
+		dispatch(readTodosAsync(searchPhrase, isAlphabetSorting));
+
 	}, [searchPhrase, isAlphabetSorting]);
 
 	return (

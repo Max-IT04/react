@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { App, initialState } from './app';
-import { StateManager } from './state-manager';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { App } from './app';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-	<StateManager initialState={initialState}>
+	<Provider store={store}>
 		<App />
-	</StateManager>,
+	</Provider>,
 );
